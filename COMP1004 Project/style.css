@@ -1,0 +1,325 @@
+button {
+    background-color: lightgray;
+    border: none;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+}
+
+#mine {
+    border: none;
+    background: url('assets/asteroid.png') no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(10); /* scale(2) will make the button 200% bigger */
+    height: 500px;
+    width: 25px;
+}
+
+button:hover {
+    background-color: gray;
+}
+
+.upgrade_buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start; /* Align items to the start of the container */
+}
+
+.upgrade_buttons button {
+    flex: 1 0 20%; /* This will make the buttons take up 20% of the row, allowing for 4 buttons per row */
+    margin: 0.5%; /* Reduce the margin around the buttons */
+    height: 75px; /* Set a fixed height for all buttons */
+}
+
+.disabled{
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+body {
+    background: url('assets/bg-planet.png'), url('assets/bg-stars.png'), url('assets/bg-back.png');
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-attachment: fixed, fixed;
+    -webkit-background-size: cover, cover;
+    -moz-background-size: cover, cover;
+    -o-background-size: cover, cover;
+    background-size: cover, cover;
+}
+
+#money {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; /* This will add a black outline */
+}
+
+#upgrade {
+    position: fixed;
+    left: 10px; /* Move to the left side of the screen */
+    top: 30px;
+    transform: translateY(-50%);
+    width: 100px; /* Adjust this value to your preference */
+    height: auto;
+    padding: 10px;
+}
+
+.upgrades {
+    position: fixed;
+    top: 0;
+    left: -550px; /* Initially hidden off the left side of the screen */
+    width: 550px; /* Adjust this value to your preference */
+    height: 100%;
+    background-color: #020324;
+    transition: left 0.5s ease-in-out; /* Smooth transition effect */
+}
+
+.upgrades button {
+    display: none; /* Initially hide the buttons */
+}
+
+#upgrade2 {
+    flex-basis: 100%; /* This will make the button take up the full width of the row */
+}
+
+#clicker_upgrade {
+    flex-basis: 100%; /* This will make the button take up the full width of the row */
+}
+
+#setting {
+    position: fixed;
+    right: 10px; /* Move to the right side of the screen */
+    top: 30px; /* Adjust this value so the settings button doesn't overlap with the upgrade button */
+    transform: translateY(-50%);
+    width: 100px; /* Adjust this value to your preference */
+    height: auto;
+    padding: 10px;
+}
+
+.settings {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 225px;
+    background-color: #020324;
+    transition: right 0.5s ease-in-out; /* Smooth transition effect */
+}
+
+.settings button {
+    display: none; /* Initially hide the settings buttons */
+}
+
+.settings_buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center; /* Align items to the start of the container */
+}
+
+.settings_buttons button {
+    flex: 100%;
+    margin: 2px; /* Reduce the margin around the buttons */
+    height: 71px; /* Set a fixed height for all buttons */
+    text-align: center;
+}
+
+.settings_text {
+    display: block;
+    position: fixed; /* Position the save text relative to the viewport */
+    top: 15%; /* Position the save text 25% down from the top of the page */
+    left: 50%; /* Position the save text in the middle of the page horizontally */
+    transform: translateX(-50%); /* Center the save text */
+    text-align: center; /* Center the text within the save text element */
+    color: white;
+    font-size: 25px;
+}
+
+#total_money_earned {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    left: 25%;
+    transform: translate(-50%, 0);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; /* This will add a black outline */
+}
+
+#player_level {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    left: 75%;
+    transform: translate(-50%, 0);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; /* This will add a black outline */
+}
+
+#intro_text {
+    display: none;
+    position: fixed;
+    bottom: 1%;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    color: white;
+    border-top: 1px solid white; /* White border at the top */
+    text-align: center;
+    font-size: 18px;
+}
+
+#first_upgrade {
+    display: none;
+    position: fixed;
+    bottom: 1%;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    color: white;
+    border-top: 1px solid white; /* White border at the top */
+    text-align: center;
+    font-size: 18px;
+}
+
+#first_upgrade2 {
+    display: none;
+    position: fixed;
+    bottom: 1%;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    color: white;
+    border-top: 1px solid white; /* White border at the top */
+    text-align: center;
+    font-size: 18px;
+}
+
+#first_pickaxe {
+    display: none;
+    position: fixed;
+    bottom: 1%;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    color: white;
+    border-top: 1px solid white; /* White border at the top */
+    text-align: center;
+    font-size: 18px;
+}
+
+#max_pickaxe {
+    display: none;
+    position: fixed;
+    bottom: 1%;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    color: white;
+    border-top: 1px solid white; /* White border at the top */
+    text-align: center;
+    font-size: 18px;
+}
+
+#first_drill {
+    display: none;
+    position: fixed;
+    bottom: 1%;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    color: white;
+    border-top: 1px solid white; /* White border at the top */
+    text-align: center;
+    font-size: 18px;
+}
+
+#first_mech {
+    display: none;
+    position: fixed;
+    bottom: 1%;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    color: white;
+    border-top: 1px solid white; /* White border at the top */
+    text-align: center;
+    font-size: 18px;
+}
+
+#first_mining_ship {
+    display: none;
+    position: fixed;
+    bottom: 1%;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    color: white;
+    border-top: 1px solid white; /* White border at the top */
+    text-align: center;
+    font-size: 18px;
+}
+
+#first_mining_fleet {
+    display: none;
+    position: fixed;
+    bottom: 1%;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    color: white;
+    border-top: 1px solid white; /* White border at the top */
+    text-align: center;
+    font-size: 18px;
+}
+
+#maxed_mining_colony {
+    display: none;
+    position: fixed;
+    bottom: 1%;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    color: white;
+    border-top: 1px solid white; /* White border at the top */
+    text-align: center;
+    font-size: 18px;
+}
+
+#maxed_mining_planet {
+    display: none;
+    position: fixed;
+    bottom: 1%;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    color: white;
+    border-top: 1px solid white; /* White border at the top */
+    text-align: center;
+    font-size: 18px;
+}
